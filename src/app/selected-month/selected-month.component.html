@@ -1,0 +1,13 @@
+<div class="header">
+    <div class="month">
+        <span><b>{{ dateService.date | async | moment:'MMMM' }}</b></span>
+        <span>{{ dateService.date | async | moment:'YYYY' }}</span>
+    </div>
+    <div class="buttons">
+        <!-- <button (click)="changeMonth(-1)">Previous</button>
+        <button (click)="changeMonth(1)">Next</button> -->
+        <button id="today" (click)="today()">Сегодня</button>
+        <button (click)="changeMonth(-1)">Назад</button>
+        <button (click)="changeMonth(1)">Вперед</button>
+    </div>
+</div>

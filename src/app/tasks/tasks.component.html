@@ -1,0 +1,116 @@
+
+
+<div class="tasks-container">
+  <div class="content">
+    <div class="content-grid">
+
+      <div class="header">
+        <div class="date">
+          <span><b>{{dateService.date | async | moment:'D MMMM'}}</b></span>
+          <span>{{ dateService.date | async | moment:'YYYY' }}</span>
+        </div>
+        
+        <form class="new-task-form">
+          <div class="new-task-wraper">
+            <input 
+              type="text" 
+              name="new-task-input" 
+              id="new-task-input" 
+              placeholder="Что вы запланировали?" 
+              name="task" 
+              [(ngModel)]="newTaskValue"
+            />
+            <button 
+              id="new-task-submit"  
+              (click)="submitForm()"
+            >
+              {{submitButtonTitle}}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="task-list">
+        <div class="task-title">
+          <span><b>Заметки :</b></span>
+        </div>
+
+        <div class="tasks">
+          <div id="inner-scroll">
+            <div id="inner-flex">
+              <div class="task" *ngFor="let task of tasks; let i = index">
+                <div class="task-text">
+                  <span>
+                    <!-- <strong>{{i + 1}}</strong>{{task.title}} -->
+                    {{task.title}}
+                  </span>
+                </div>
+                <div class="task-buttons">
+                  <button id="task-edit" (click)="editTask(task.title)">e</button>
+                  <button id="task-delete" (click)="deleteTask(task.title)">x</button>
+                </div>
+              </div>
+
+              <!-- <ng-template #noTasks>
+                <p class="text-center">No tasks yet...</p>
+              </ng-template> -->
+              <div *ngIf="tasks.length==0">
+                <p class="noTasks">Заметок нет...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section>
+    <header>
+      Organizer: <strong>{{dateService.date | async | moment:'DD.MM.YYYY'}}</strong>
+      <hr />
+    </header>
+  
+    <main>
+      <ul *ngIf="tasks.length; else noTasks">
+        <li class="task" *ngFor="let task of tasks; let i = index">
+          <span>
+            <strong>{{i + 1}}</strong>
+            {{task.title}}
+          </span>
+          <button class="btn btn-primary">Remove</button>
+        </li>
+      </ul>
+      <ng-template #noTasks>
+        <p class="text-center">No tasks yet...</p>
+      </ng-template>
+    </main>
+  
+    <footer>
+      <form [formGroup]="form">
+        <input type="text" formControlName="title">
+  
+        <button
+          type="submit"
+          class="btn btn-primary btn-block"
+          [disabled]="form.invalid"
+        >Add</button>
+      </form>
+    </footer>
+  </section> -->

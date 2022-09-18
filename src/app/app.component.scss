@@ -1,0 +1,52 @@
+.container {
+    height: 100%;
+    width: 100%;
+    // overflow: auto;
+    display: grid;
+    grid-template-columns: minmax(300px, 25%) auto;
+}
+
+.task-container {
+    // height: 100%;
+    // width: 100%;
+    // background-color: #247BA0;
+    background-color: #fcffff;
+}
+
+.calendar-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    // margin-top: 50px;
+    justify-content: center;
+    background-color: #fcffff;
+}
+
+.calendar-content {
+    max-width: 770px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-rows: 90px 1fr;
+}
+
+.calendar-header {
+    // background-color: red;
+}
+
+.calendar-weeks {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    color: #247BA0;
+}
+.calendar-weeks div {
+    width: 110px;
+    padding: 10px 0;
+    text-align: center;
+}

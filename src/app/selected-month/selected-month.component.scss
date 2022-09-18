@@ -1,0 +1,49 @@
+.header {
+    height: 40px;
+    width: 770px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.buttons {
+    display: flex;
+    margin: auto 0;
+}
+
+button {
+    width: 75px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    background-color: #94bdc8;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+button:hover {
+    box-shadow: 0px 0px 5px gray;
+}
+
+#today {
+    // background-color: #bbd2d8;
+    color:#247BA0;
+    background-color: #ffff;
+    margin-right: 25px;
+    box-shadow: 0px 0px 3px #c9d9e8da;
+}
+#today:hover {
+    box-shadow: 0px 0px 5px gray;
+}
+
+
+.month span {
+    font-size: 30px;
+    margin-right: 10px;
+    color: #247BA0;
+    text-transform: capitalize;
+}

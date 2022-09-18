@@ -1,0 +1,153 @@
+.calendar {
+  width: 100%;
+  // height: calc(100% - 40px);
+  height: calc(100vh - 110px);
+  max-height: 660px;
+}
+
+.calendar-container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.calendar-cell {
+  min-width: 80px;
+  min-height: 80px;
+  padding: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  background-color: white;
+  margin: 5px;
+  box-shadow: 0px 0px 3px #c9d9e8da;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calendar-cell:hover {
+  background-color: #d3dfeb;
+  box-shadow: 0px 0px 5px #c9d9e8da;
+  #countOfTasks {
+    background-color: #ffffff;
+    color: #247BA0;
+  }
+}
+
+.calendar-cell #day {
+  width: 24px;
+  height: 24px;
+  margin-top: -5px;
+  margin-left: -5px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+// дни другого месяца
+.disabled {
+  color: #94bdc8a3;
+  background-color: #fdffff;
+}
+.disabled:hover {
+  #countOfTasks {
+    background-color: #e5eef5;
+    color: #fdffff;
+  }
+}
+
+// текущая дата
+.active {
+  
+}
+.active #day {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #247BA0;
+}
+
+// выбранный день
+.selected {
+  background-color: #e5eef5;
+}
+
+#countOfTasks {
+  margin: auto 0;
+  height: 50%;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  background-color: #cbdae5;
+  // background-color: #b3c8d7;
+  color: #ffffff;
+  box-shadow: 0px 0px 3px #c9d9e8da;
+  border-radius: 5px;
+}
+#countOfTasks span {
+  margin: auto 0;
+}
+
+.selected #countOfTasks {
+  background-color: #ffffff;
+  color: #247BA0;
+}
+
+
+.disabled #countOfTasks {
+  background-color: #e5eef5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// table {
+//     width: 100%;
+//     margin-bottom: 1rem;
+//     border-collapse: collapse;
+  
+//     td, th {
+//       border: 1px solid #000;
+//       padding: .5rem 1rem;
+//     }
+  
+//     td {
+//       text-align: center;
+//       transition: all .2s;
+  
+//       &.disabled {
+//         opacity: .5;
+//       }
+  
+//       &:hover:not(.disabled) {
+//         background: #eee;
+//         cursor: pointer;
+//       }
+//     }
+  
+//     .active {
+//       color: var(--primary-color);
+//       font-weight: bold;
+//     }
+  
+//     .selected {
+//       color: blue;
+//     }
+//   }

@@ -1,0 +1,57 @@
+<div class="calendar">
+  <div class="calendar-container">
+    <div 
+      class="calendar-cell" 
+      [class.active]="day.active"
+      [class.disabled]="day.disabled"
+      [class.selected]="day.selected"
+      (click)="select(day.value)"
+      *ngFor="let day of calendar"
+      >
+      <span id="day">
+        {{ day.value | moment:'D' }}
+      </span>
+      <!-- <div *ngIf="ifTasks"
+        [class.ifTasks]="day.ifTasks>0"
+      > -->
+      <div id="countOfTasks" *ngIf="day.countOfTasks>0">
+        <span>
+          Заметки: {{ day.countOfTasks }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <table>
+    <thead>
+    <tr>
+      <th>Sun</th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wen</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Sat</th>
+    </tr>
+    </thead>
+  
+    <tbody>
+    <tr *ngFor="let week of calendar">
+      <td
+        *ngFor="let day of week.days"
+        [class.disabled]="day.disabled"
+        (click)="select(day.value)"
+      >
+        <span
+          [class.selected]="day.selected"
+          [class.active]="day.active"
+        >
+          {{ day.value | moment:'ddd DD' }}
+        </span>
+      </td>
+    </tr>
+    </tbody>
+  </table> -->
