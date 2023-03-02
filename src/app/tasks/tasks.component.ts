@@ -121,7 +121,7 @@ export class TasksComponent implements OnInit {
   private updateTask() {
     this.tasksService.load(this.user_id).subscribe(user => {
       this.tasksService.editTask(user, this.editableTaskValue, this.newTaskValue, this.dateService.date.getValue().format('DD-MM-YYYY')).subscribe(res => {
-          this.ngOnInit();
+          this.ngOnInit(); 
           this.clearFields();
         }, err => {
           alert("Невозможно обновить заметку.");
